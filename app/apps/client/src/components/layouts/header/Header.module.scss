@@ -1,0 +1,61 @@
+.header {
+   .wrapper {
+      position: relative;
+      padding: 0 5% 0 5%;
+      height: 80px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-bottom: 2px solid rgb(30, 30, 30);
+      background-color: rgb(240, 240, 240);
+      color: rgb(240, 240, 240);
+
+      > h2 {
+         color: rgb(20, 28, 35);
+         font-weight: 500;
+      }
+
+      > h2:first-child {
+         position: absolute;
+         left: 10%;
+
+         padding: 5px 20px;
+
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         background-color: rgb(20, 28, 35);
+         color: rgb(240, 240, 240);
+
+         > span {
+            color: rgb(30, 102, 175);
+            font-size: 28px;
+         }
+      }
+
+      button {
+         position: absolute;
+         left: 85%;
+         padding: 13px 20px;
+
+         border: none;
+         border-bottom: 2px solid rgba(240, 240, 240, 0);
+
+         background-color: inherit;
+         color: rgb(20, 28, 35);
+         font-size: 17px;
+         font-weight: 500;
+
+         cursor: pointer;
+         transition: all 0.1s ease-in-out;
+
+         &:hover {
+            border-bottom: 2px solid rgb(30, 102, 175);
+            scale: 1.1;
+         }
+      }
+   }
+}

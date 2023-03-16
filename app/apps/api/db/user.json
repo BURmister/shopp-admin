@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "640b75aaffc92f0617b998d2"
+  },
+  "name": "admin",
+  "hash": "$argon2id$v=19$m=65536,t=3,p=4$xRm00LVl6UtAQbO1XINZbQ$nHKQOt5N2kvCfu+ZzmFVt/SPHTD+9JXNPVVLUnVs3g4",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678472618273"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678566000190"
+    }
+  },
+  "__v": 0,
+  "firstName": "Ryan",
+  "role": "администратор",
+  "secondName": "Gosling"
+}]

@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "640c53b55c338e68003db704"
+  },
+  "key": "11",
+  "name": "футболка",
+  "size": "S",
+  "amount": 5,
+  "price": "100500",
+  "description": "самое лучшее описание для футболки",
+  "gender": "Женский",
+  "category": "футболки",
+  "producer": "pull&bear",
+  "img": "stringstringstringstringstringstringstringstring",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678529461889"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678532866782"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "640c67d679c39266692edfef"
+  },
+  "key": "22",
+  "name": "футболка оверсайз",
+  "size": "M",
+  "amount": 7,
+  "price": "100500",
+  "description": "просто футболочка оверсайз",
+  "gender": "Мужской",
+  "category": "футболки",
+  "producer": "pull&bear",
+  "img": "string",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678534614355"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678534614355"
+    }
+  },
+  "__v": 0
+}]

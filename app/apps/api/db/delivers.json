@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "640cdbfa9255deee7c49a6af"
+  },
+  "deliveryKey": "11",
+  "deliveryName": "доставка новых футболок",
+  "deliveryDescription": "футболки pull@bear",
+  "from": "неизвестно",
+  "begging": "когда-то",
+  "ending": "наверно скоро",
+  "products": [
+    {
+      "key": "22",
+      "name": "футболка оверсайз",
+      "price": "100500",
+      "description": "просто футболочка оверсайз",
+      "gender": "Женский",
+      "category": "футболки",
+      "producer": "pull&bear",
+      "size": "S",
+      "amount": 3,
+      "img": "string"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678564346024"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1678564346024"
+    }
+  },
+  "__v": 0
+}]
