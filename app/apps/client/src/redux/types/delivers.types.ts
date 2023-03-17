@@ -1,4 +1,4 @@
-import { product } from "./product.types";
+import { product } from './clothes.types';
 
 export type delivery = {
    _id: string;

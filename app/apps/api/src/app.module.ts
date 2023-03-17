@@ -1,3 +1,4 @@
+import { InventoryModule } from './inventory/inventory.module';
 import { DeliversModule } from './delivers/delivers.module';
 import { ClothesModule } from './clothes/clothes.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -28,6 +29,7 @@ import { getMongoConfig } from './config/mongo.config';
     UserModule,
     ClothesModule,
     DeliversModule,
+    InventoryModule
   ],
   controllers: [AppController],
   providers: [AppService],

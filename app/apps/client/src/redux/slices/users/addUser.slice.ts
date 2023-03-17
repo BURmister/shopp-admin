@@ -53,7 +53,7 @@ export const addUserSlice = createSlice({
 
 export const addStatus = (state: RootState) => state.addUser.status;
 
-export const addedUser = (state: RootState) => state.addProduct.id;
-export const addedStatus = (state: RootState) => state.addProduct.status;
+export const addedUser = (state: RootState) => state.addUser.id;
+export const addedStatus = (state: RootState) => state.addUser.status;
 
 export default addUserSlice.reducer;

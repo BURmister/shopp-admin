@@ -29,7 +29,7 @@
             color: rgba(176, 176, 176, 0.5);
 
             img {
-               filter: invert(30%) grayscale(100%);
+               filter: invert(80%) grayscale(100%);
             }
          }
       }
@@ -96,7 +96,6 @@
 
          .table__card {
             padding: 10px;
-            height: 250px;
             width: 200px;
 
             display: flex;
@@ -182,6 +181,10 @@
                         width: 25px;
                         opacity: 0.5;
                      }
+                  }
+
+                  .plus {
+                     opacity: 0.6;
                   }
                }
             }

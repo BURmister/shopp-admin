@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './Home.module.scss'
 import user from '../../../assets/user.svg'
-import product from '../../../assets/ball.svg'
+import inventory from '../../../assets/ball.svg';
 import clothes from '../../../assets/shirt.svg'
 import delivery from '../../../assets/delivery.svg'
 
@@ -16,11 +16,11 @@ const Home: FC = () => {
 
    return (
       <div className={styles.wrapper}>
-         <Link to="/products">
+         <Link to="/inventory">
             <span>Инвентарь</span>
-            <img src={product} />
+            <img src={inventory} />
          </Link>
-         <Link to="/products">
+         <Link to="/clothes">
             <span>Одежда</span>
             <img src={clothes} />
          </Link>

@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 
-import productsReducer from './slices/products/products.slice';
-import oneProductReducer from './slices/products/oneProduct.slice';
-import deleteProductReducer from './slices/products/deleteProduct.slice';
-import addProductReducer from './slices/products/addProduct.slice';
-import amountProductReducer from './slices/products/amountProduct.slice';
-import editProductReducer from './slices/products/editProduct.slice'
+import clothesReducer from './slices/clothes/clothes.slice';
+import oneClothesReducer from './slices/clothes/oneClothes.slice';
+import deleteClothesReducer from './slices/clothes/deleteClothes.slice';
+import addClothesReducer from './slices/clothes/addClothes.slice';
+import amountClothesReducer from './slices/clothes/amountClothes.slice';
+import editClothesReducer from './slices/clothes/editClothes.slice'
 
 import authReducer from './slices/auth/auth.slice';
 
@@ -26,12 +26,12 @@ import editUserReducer from './slices/users/editUser.slice';
 
 export const store = configureStore({
    reducer: {
-      products: productsReducer,
-      oneProduct: oneProductReducer,
-      deleteProduct: deleteProductReducer,
-      addProduct: addProductReducer,
-      amountProduct: amountProductReducer,
-      editProduct: editProductReducer,
+      clothes: clothesReducer,
+      oneClothes: oneClothesReducer,
+      deleteClothes: deleteClothesReducer,
+      addClothes: addClothesReducer,
+      amountClothes: amountClothesReducer,
+      editClothes: editClothesReducer,
 
       delivers: deliversReducer,
       oneDelivery: oneDeliveryReducer,

@@ -27,7 +27,7 @@ const Users: FC = () => {
    useEffect(() => {
       window.scrollTo(0, 0);
       document.title = 'Сотрудники';
-      searchTerm !== '' ? dispatch(fetchUsers({searchTerm, token})) : dispatch(fetchUsers({token}));
+      searchTerm !== '' ? dispatch(fetchUsers({ searchTerm, token })) : dispatch(fetchUsers({ token }));
    }, [searchTerm]);
 
    const onDelete = (_id: string) => {
@@ -63,55 +63,51 @@ const Users: FC = () => {
    if (users.length === 0) {
       return (
          <div className={styles.wrapper}>
-            <div className={styles.wrapper}>
-               <nav>
-                  <Link className="back" to="/" aria-label="назад на главную">
-                     <img src={back} />
-                     Назад
-                  </Link>
-                  <Link className="new user" to="/users/add" aria-label="добавить нового пользователя">
-                     Создать
-                     <img src={user} />
-                  </Link>
-               </nav>
-               <div className={styles.table}></div>
-               <h1>сотрудники в журнале отсутствуют</h1>
-            </div>
+            <nav>
+               <Link className="back" to="/" aria-label="назад на главную">
+                  <img src={back} />
+                  <h3>Назад</h3>
+               </Link>
+               <Link className="new user" to="/users/add" aria-label="добавить нового пользователя">
+                  <h3>Создать</h3>
+                  <img src={user} />
+               </Link>
+            </nav>
+            <h1>сотрудники в журнале отсутствуют</h1>
          </div>
       );
    }
 
    return (
       <div className={styles.wrapper}>
-         <div className={styles.wrapper}>
-            <nav>
-               <Link className="back" to="/" aria-label="назад на главную">
-                  <img src={back} />
-                  Назад
-               </Link>
-               <Link className="new user" to="/users/add" aria-label="добавить нового пользователя">
-                  Создать
-                  <img src={user} />
-               </Link>
-            </nav>
-            <div className={styles.table}>
-               <form className={styles.table__row}>
-                  <input
-                     ref={ref}
-                     type="search"
-                     placeholder="Поиск сотрудника по   коду / имени / должности"
-                     onKeyDown={(event) => enterClick(event)}
-                     value={localSearch}
-                     onChange={(event: { target: HTMLInputElement }) => onSearchInput(event)}
-                  />
-                  {/* <button type="button" onClick={() => buttonClick()}>
+         <nav>
+            <Link className="back" to="/" aria-label="назад на главную">
+               <img src={back} />
+               <h3>Назад</h3>
+            </Link>
+            <Link className="new user" to="/users/add" aria-label="добавить нового пользователя">
+               <h3>Создать</h3>
+               <img src={user} />
+            </Link>
+         </nav>
+         <div className={styles.table}>
+            <form className={styles.table__row}>
+               <input
+                  ref={ref}
+                  type="search"
+                  placeholder="Поиск сотрудника по   коду / имени / должности"
+                  onKeyDown={(event) => enterClick(event)}
+                  value={localSearch}
+                  onChange={(event: { target: HTMLInputElement }) => onSearchInput(event)}
+               />
+               {/* <button type="button" onClick={() => buttonClick()}>
                   Поиск
                </button> */}
-               </form>
-               <span className={styles.searchTerm}>{searchTerm !== '' && <h2>Результаты по запросу "{searchTerm}"</h2>}</span>
-
+            </form>
+            <span className={styles.searchTerm}>{searchTerm !== '' && <h2>Результаты по запросу "{searchTerm}"</h2>}</span>
+            <div className={styles.cards}>
                {users.map((item, index) => (
-                  <div className={styles.table__row} key={index}>
+                  <div className={styles.table__card} key={index}>
                      <span>
                         <h3>код</h3>
                         {item._id}

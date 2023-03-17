@@ -4,7 +4,7 @@ import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 export interface DeliversModel extends Base {}
 
 export class DeliversModel extends TimeStamps {
-  @prop({ unique: true })
+  @prop()
   deliveryKey: string;
 
   @prop()

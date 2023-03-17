@@ -18,6 +18,7 @@ const Login: FC = () => {
    return (
       <div className={styles.wrapper}>
          <form>
+            <h2>Войдите в систему</h2>
             <input type="text" placeholder="Логин" value={login} onChange={(event) => setLogin(event.target.value)} />
             <input placeholder="Пароль" ref={passwordRef} type="text" value={password} onChange={(event) => setPassword(event.target.value)} />
             <button type="button" onClick={() => onEnter()}>

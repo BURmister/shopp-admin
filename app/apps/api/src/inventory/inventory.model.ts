@@ -2,14 +2,17 @@ import { prop } from '@typegoose/typegoose';
 import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 import { Types } from 'mongoose';
 
-export interface ClothessModel extends Base {}
+export interface InventoryModel extends Base {}
 
-export class ClothesModel extends TimeStamps {
+export class InventoryModel extends TimeStamps {
   @prop()
   key: string;
 
   @prop()
   name: string;
+
+  @prop()
+  feature: string;
 
   @prop()
   size: string;

@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { RootState } from '../../store';
 import { delivery } from '../../types/delivers.types';
@@ -15,11 +15,7 @@ type addDelivery = {
 };
 
 export const addDelivery = createAsyncThunk('addDelivery', async (args: addDelivery) => {
-   const { data } = await axios.post(
-      `/api/delivers/add`,
-      { ...args.object },
-      { headers: { Authorization: 'Bearer ' + args.token } },
-   );
+   const { data } = await axios.post(`/api/delivers/add`, { ...args.object }, { headers: { Authorization: 'Bearer ' + args.token } });
    return data;
 });
 
@@ -36,7 +32,11 @@ const initialState: IAddDelivery = {
 export const addDeliverySlice = createSlice({
    name: 'addDelivery',
    initialState,
-   reducers: {},
+   reducers: {
+      addDeliveryStatus: (state, action: PayloadAction<'loading' | 'success' | 'error'>) => {
+         state.status = action.payload;
+      },
+   },
    extraReducers: (builder) => {
       builder.addCase(addDelivery.pending, (state) => {
          state.status = 'loading';
@@ -53,5 +53,7 @@ export const addDeliverySlice = createSlice({
 
 export const addedDelivery = (state: RootState) => state.addDelivery.id;
 export const addedStatus = (state: RootState) => state.addDelivery.status;
+
+export const { addDeliveryStatus } = addDeliverySlice.actions;
 
 export default addDeliverySlice.reducer;

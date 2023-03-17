@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { useLocate } from '../../../hooks/useLocate';
 
 import { useAppDispatch } from '../../../hooks/useRedux';
@@ -40,9 +41,17 @@ const Header: FC<{isLogin: boolean}> = ({isLogin}) => {
    return (
       <header className={styles.header}>
          <div className={styles.wrapper}>
-            <h2>спор<span>ТТ</span>овары</h2>
+            <Link to="/"> 
+               <h2>
+                  спор<span>ТТ</span>овары
+               </h2>
+            </Link>
             <h2>{found ? found.value : 'Страница не существует'}</h2>
-            { isLogin && <button type="button" onClick={() => dispatch(logout())}>Bыйти</button>}
+            {isLogin && (
+               <button type="button" onClick={() => dispatch(logout())}>
+                  Bыйти
+               </button>
+            )}
          </div>
       </header>
    );

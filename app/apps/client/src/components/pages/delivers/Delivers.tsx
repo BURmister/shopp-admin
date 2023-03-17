@@ -21,7 +21,7 @@ const Delivers: FC = () => {
    const statusComplete = useAppSelector(completeStatus);
    const dispatch = useAppDispatch();
 
-   const { token } = useContext(AppContext)
+   const { token } = useContext(AppContext);
 
    const [searchTerm, setSearchTerm] = useState<string>('');
    const [localSearch, setLocalSearch] = useState<string>('');
@@ -30,7 +30,7 @@ const Delivers: FC = () => {
    useEffect(() => {
       window.scrollTo(0, 0);
       document.title = 'Доставки';
-      searchTerm !== '' ? dispatch(fetchDelivers({searchTerm, token})) : dispatch(fetchDelivers({token}));
+      searchTerm !== '' ? dispatch(fetchDelivers({ searchTerm, token })) : dispatch(fetchDelivers({ token }));
    }, [searchTerm]);
 
    const onDelete = (_id: string) => {
@@ -78,55 +78,51 @@ const Delivers: FC = () => {
    if (delivers.length === 0) {
       return (
          <div className={styles.wrapper}>
-            <div className={styles.wrapper}>
-               <nav>
-                  <Link className="back" to="/" aria-label="назад на главную">
-                     <img src={back} />
-                     Назад
-                  </Link>
-                  <Link className="new delivery" to="/delivers/add" aria-label="добавить новую доставку">
-                     Создать
-                     <img src={delivery} />
-                  </Link>
-               </nav>
-               <div className={styles.table}></div>
-               <h1>нет ожидаемых доставок</h1>
-            </div>
+            <nav>
+               <Link className="back" to="/" aria-label="назад на главную">
+                  <img src={back} />
+                  <h3>Назад</h3>
+               </Link>
+               <Link className="new delivery" to="/delivers/add" aria-label="добавить новую доставку">
+                  <h3>Создать</h3>
+                  <img src={delivery} />
+               </Link>
+            </nav>
+            <h1>нет ожидаемых доставок</h1>
          </div>
       );
    }
 
    return (
       <div className={styles.wrapper}>
-         <div className={styles.wrapper}>
-            <nav>
-               <Link className="back" to="/" aria-label="назад на главную">
-                  <img src={back} />
-                  Назад
-               </Link>
-               <Link className="new delivery" to="/delivers/add" aria-label="добавить новую доставку">
-                  Создать
-                  <img src={delivery} />
-               </Link>
-            </nav>
-            <div className={styles.table}>
-               <form className={styles.table__row}>
-                  <input
-                     ref={ref}
-                     type="search"
-                     placeholder="Поиск доставки по   коду / названию / месту отправления"
-                     onKeyDown={(event) => enterClick(event)}
-                     value={localSearch}
-                     onChange={(event: { target: HTMLInputElement }) => onSearchInput(event)}
-                  />
-                  {/* <button type="button" onClick={() => buttonClick()}>
+         <nav>
+            <Link className="back" to="/" aria-label="назад на главную">
+               <img src={back} />
+               <h3>Назад</h3>
+            </Link>
+            <Link className="new delivery" to="/delivers/add" aria-label="добавить новую доставку">
+               <h3>Создать</h3>
+               <img src={delivery} />
+            </Link>
+         </nav>
+         <div className={styles.table}>
+            <form className={styles.table__row}>
+               <input
+                  ref={ref}
+                  type="search"
+                  placeholder="Поиск доставки по   коду / названию / месту отправления"
+                  onKeyDown={(event) => enterClick(event)}
+                  value={localSearch}
+                  onChange={(event: { target: HTMLInputElement }) => onSearchInput(event)}
+               />
+               {/* <button type="button" onClick={() => buttonClick()}>
                   Поиск
                </button> */}
-               </form>
-               <span className={styles.searchTerm}>{searchTerm !== '' && <h2>Результаты по запросу "{searchTerm}"</h2>}</span>
-
+            </form>
+            <span className={styles.searchTerm}>{searchTerm !== '' && <h2>Результаты по запросу "{searchTerm}"</h2>}</span>
+            <div className={styles.cards}>
                {delivers.map((item, index) => (
-                  <div className={styles.table__row} key={index}>
+                  <div className={styles.table__card} key={index}>
                      <span>
                         <h3>код</h3>
                         {item._id}
