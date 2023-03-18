@@ -8,6 +8,13 @@ import addClothesReducer from './slices/clothes/addClothes.slice';
 import amountClothesReducer from './slices/clothes/amountClothes.slice';
 import editClothesReducer from './slices/clothes/editClothes.slice'
 
+import inventoryReducer from './slices/inventory/inventory.slice';
+import oneInventoryReducer from './slices/inventory/oneInventory.slice';
+import deleteInventoryReducer from './slices/inventory/deleteInventory.slice';
+import addInventoryReducer from './slices/inventory/addInventory.slice';
+import amountInventoryReducer from './slices/inventory/amountInventory.slice';
+import editInventoryReducer from './slices/inventory/editInventory.slice';
+
 import authReducer from './slices/auth/auth.slice';
 
 import deliversReducer from './slices/delivers/delivers.slice';
@@ -32,6 +39,13 @@ export const store = configureStore({
       addClothes: addClothesReducer,
       amountClothes: amountClothesReducer,
       editClothes: editClothesReducer,
+
+      inventory: inventoryReducer,
+      oneInventory: oneInventoryReducer,
+      deleteInventory: deleteInventoryReducer,
+      addInventory: addInventoryReducer,
+      amountInventory: amountInventoryReducer,
+      editInventory: editInventoryReducer,
 
       delivers: deliversReducer,
       oneDelivery: oneDeliveryReducer,

@@ -15,6 +15,7 @@ export class InventoryDto {
 
   @IsString()
   @IsOptional()
+  feature: string;
 
   @IsString()
   @IsOptional()
