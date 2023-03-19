@@ -15,9 +15,12 @@ import Users from './components/pages/users/Users';
 import ClothesAdd from './components/pages/clothes/add/Clothes.add';
 import DeliversAdd from './components/pages/delivers/add/DeliversAdd';
 import UsersAdd from './components/pages/users/add/UsersAdd';
-import ClothesEdit from './components/pages/clothes/edit/clothes.edit';
+import ClothesEdit from './components/pages/clothes/edit/Clothes.edit';
 import DeliversEdit from './components/pages/delivers/edit/DeliversEdit';
 import UsersEdit from './components/pages/users/edit/UsersEdit';
+import Inventory from './components/pages/inventory/Inventory';
+import InventoryAdd from './components/pages/inventory/add/InventoryAdd';
+import InventoryEdit from './components/pages/inventory/edit/InventoryEdit';
 
 import './App.css';
 import AppContext from './hooks/Context';
@@ -55,9 +58,9 @@ function App() {
                <main>
                   <Routes>
                      <Route path="/" element={<Home />} />
-                     <Route path="/inventory" element={<Users />} />
-                     <Route path="/inventory/add" element={<UsersAdd />} />
-                     <Route path="/inventory/edit/:id" element={<UsersEdit />} />
+                     <Route path="/inventory" element={<Inventory />} />
+                     <Route path="/inventory/add" element={<InventoryAdd />} />
+                     <Route path="/inventory/edit/:id" element={<InventoryEdit />} />
                      <Route path="/clothes" element={<Clothes />} />
                      <Route path="/clothes/add" element={<ClothesAdd />} />
                      <Route path="/clothes/edit/:id" element={<ClothesEdit />} />
